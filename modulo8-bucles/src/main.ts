@@ -110,9 +110,9 @@ const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
   return PacientesAsignadosAPediatriaYMenorDeDiezAnio;
 };
 
-const resultado01B = obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(
-  pacientesAsignadosAPediatria
-)
+// const resultado01B = obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(
+//   pacientesAsignadosAPediatria
+// )
 
 // console.log(resultado01B) 
 
@@ -128,8 +128,8 @@ const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
   return activarProctolo;
 };
 
-const resultado02 = activarProtocoloUrgencia(pacientes)
-console.log(resultado02)
+// const resultado02 = activarProtocoloUrgencia(pacientes)
+// console.log(resultado02)
 
 // Apartado 3
 
@@ -144,7 +144,7 @@ const reasignaPacientesAMedicoFamilia = (
   return pacientes;
 };
 
-const resultado03 = reasignaPacientesAMedicoFamilia(pacientes)
+// const resultado03 = reasignaPacientesAMedicoFamilia(pacientes)
 // console.log(resultado03)
 
 // Apartado 4
@@ -156,7 +156,7 @@ const hayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
   return true;
 };
 
-const resultado04 = hayPacientesDePediatria(pacientes);
+// const resultado04 = hayPacientesDePediatria(pacientes);
 // console.log(resultado04)
 
 // Apartado 5
@@ -194,5 +194,5 @@ const cuentaPacientesPorEspecialidad = (
   return numeroPacientesPorEspecialidad;
 };
 
-const resultado05 = cuentaPacientesPorEspecialidad(pacientes)
+//const resultado05 = cuentaPacientesPorEspecialidad(pacientes)
 // console.log(resultado05)
