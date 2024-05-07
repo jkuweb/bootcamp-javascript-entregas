@@ -91,7 +91,8 @@ const obtenPacientesAsignadosAPediatria = (
   return pacientesAsignadosAPediatria;
 };
 
-console.log(obtenPacientesAsignadosAPediatria(pacientes));
+const resultado01A = obtenPacientesAsignadosAPediatria(pacientes);
+console.log(resultado01A)
 
 // b
 
@@ -109,11 +110,11 @@ const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
   return PacientesAsignadosAPediatriaYMenorDeDiezAnio;
 };
 
-console.log(
-  obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(
-    pacientesAsignadosAPediatria
-  )
-);
+const resultado01B = obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(
+  pacientesAsignadosAPediatria
+)
+
+// console.log(resultado01B) 
 
 // Apartado 2
 
@@ -127,7 +128,8 @@ const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
   return activarProctolo;
 };
 
-console.log(activarProtocoloUrgencia(pacientes));
+const resultado02 = activarProtocoloUrgencia(pacientes)
+console.log(resultado02)
 
 // Apartado 3
 
@@ -142,18 +144,20 @@ const reasignaPacientesAMedicoFamilia = (
   return pacientes;
 };
 
-console.log(reasignaPacientesAMedicoFamilia(pacientes));
+const resultado03 = reasignaPacientesAMedicoFamilia(pacientes)
+// console.log(resultado03)
 
 // Apartado 4
 
-const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
+const hayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
   for (const paciente of pacientes) {
     if (paciente.especialidad === "Pediatra") return false;
   }
   return true;
 };
 
-console.log(HayPacientesDePediatria(pacientes));
+const resultado04 = hayPacientesDePediatria(pacientes);
+// console.log(resultado04)
 
 // Apartado 5
 
@@ -190,4 +194,5 @@ const cuentaPacientesPorEspecialidad = (
   return numeroPacientesPorEspecialidad;
 };
 
-console.log(cuentaPacientesPorEspecialidad(pacientes));
+const resultado05 = cuentaPacientesPorEspecialidad(pacientes)
+// console.log(resultado05)
