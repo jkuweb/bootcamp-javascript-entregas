@@ -1,15 +1,17 @@
 import {
   isGameOver,
-  mostrarPrediccion,
-  pedirCarta,
-  pedirMePlanto,
+  obtenerNumeroAleatorio,
+  generarCarta,
+  obtenerPuntosDeLaCarta,
+  calcularPuntuacionTotal,
+  valorarResultado
 } from "./motor";
 
 import {
   puntuacion,
-  mePlanto
+  mePlanto,
+  setMePlanto,
 } from "./modelo";
-
 
 const appBox = document.getElementById("app");
 const element = document.getElementById("mostrar-puntuacion");
@@ -65,6 +67,42 @@ export const obtenerUrlImage = (carta: number) => {
     default:
       return `${baseUrl}/back.jpg`;
   }
+};
+
+// PEDIR CARTA
+
+export const pedirCarta = () => {
+  const numeroAleatorio = obtenerNumeroAleatorio();
+  const carta = generarCarta(numeroAleatorio);
+  const urlCarta = obtenerUrlImage(carta);
+  mostrarImagenCarta(urlCarta);
+  const puntoCarta = obtenerPuntosDeLaCarta(carta);
+  calcularPuntuacionTotal(puntoCarta);
+  mostrarPuntuacion();
+  if (isGameOver()) {
+    mostrarMensaje("Game Over");
+    mostarBotonesDeshabilitados();
+    mostrarBotonReinicio();
+  }
+};
+
+// PEDIR PLANTO
+
+export const pedirMePlanto = () => {
+  setMePlanto(true);
+  const mensajeValoracion = valorarResultado();
+  mostrarMensaje(mensajeValoracion);
+  mostarBotonesDeshabilitados();
+  mostrarBtnPrediccion();
+  if (isGameOver()) {
+    mostrarBotonReinicio();
+  }
+};
+
+// MOSTRAR PREDICCIÓN
+
+const mostrarPrediccion = () => {
+  pedirCarta();
 };
 
 export const mostrarImagenCarta = (urlCarta: string) => {
