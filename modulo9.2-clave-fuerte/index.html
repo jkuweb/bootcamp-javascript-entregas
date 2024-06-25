@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Clave fuerte</h1>
+      <div>
+        <button id="refrescar">Refrescar</button>
+        <div id="errorMessage"></div>
+      </div>
+      <div>
+        <form id="formulario">
+          <label for="nombre">Nombre:</label>
+          <input id="nombre" name="nombre" required />
+
+          <label for="password">Constraseña:</label>
+          <input id="password" name="password" required />
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
