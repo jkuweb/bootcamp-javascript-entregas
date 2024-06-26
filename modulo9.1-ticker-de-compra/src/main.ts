@@ -1,7 +1,7 @@
 import { productos } from "./data";
+import { calcularCuantia, calcularPrecioUnidadConIVA, calcularTotal, calcularTotalIVA, eliminarProductosSinCantidad } from "./helpers";
 import {
   LineaTicket,
-  Producto,
   ResultadoLineaTicket,
   ResultadoTotalTicket,
   TicketFinal,
@@ -14,7 +14,7 @@ interface TiposDeIva {
   porcentaje: number;
 }
 
-const tiposDeIVA: TiposDeIva[] = [
+export const tiposDeIVA: TiposDeIva[] = [
   {
     tipoDeIVA: "general",
     porcentaje: 21,
@@ -41,11 +41,6 @@ const tiposDeIVA: TiposDeIva[] = [
   },
 ];
 
-/*
-calcularTotalTipoIva()
-
-Un desglose del total por tipo de IVA, es decir, la suma de los importes correspondientes a cada tipo de IVA
-*/
 const calcularTotalTipoIva = (): TotalPorTipoIva[] => {
   const listadDeProductosPorTipoDeIva = tiposDeIVA.map((tipoDeIva) => {
     let productoAgrupados = productos.filter(
@@ -61,29 +56,6 @@ const calcularTotalTipoIva = (): TotalPorTipoIva[] => {
   return eliminarProductosSinCantidad(listadDeProductosPorTipoDeIva);
 };
 
-const calcularCuantia = (
-  productoAgrupados: LineaTicket[],
-  porcentaje: number
-) => {
-  return productoAgrupados.reduce((acc, producto) => acc + (producto.cantidad * producto.producto.precio * porcentaje) / 100, 0)
-
-};
-
-const eliminarProductosSinCantidad = (
-  listadDeProductosPorTipoDeIva: TotalPorTipoIva[]
-): TotalPorTipoIva[] => {
-  return listadDeProductosPorTipoDeIva.filter((productoPorTipoDeIva) => productoPorTipoDeIva.cuantia !== 0)
-};
-
-/*
-    calculaTotalTicket()
-
-    En cuanto a los totales:
-
-    El total sin IVA.
-    El IVA.    
-    El total del ticket, incluyendo el IVA.
-*/
 const calculaTotalTicket = (
   lineaTickets: ResultadoLineaTicket[]
 ): ResultadoTotalTicket => {
@@ -97,31 +69,6 @@ const calculaTotalTicket = (
   };
 };
 
-const calcularTotal = (
-  lineaTickets: ResultadoLineaTicket[],
-  totalConIVA: boolean
-): number => {
-  let total = 0;
-  for (const lineaTicket of lineaTickets) {
-    const cantidad = lineaTicket.cantidad;
-    total += totalConIVA
-      ? lineaTicket.precioConIva * cantidad
-      : lineaTicket.precioSinIva * cantidad;
-  }
-  return total;
-};
-
-const calcularTotalIVA = (totalConIva: number, totalSinIva: number): number => {
-  let total = totalConIva - totalSinIva;
-  return parseFloat(total.toFixed(2));
-};
-
-/*
-La función calculaTicket devolverá un ticket que contendrá la siguiente información:
-
-    Por cada producto queremos el nombre, la cantidad, el precio sin IVA, el tipo de IVA y el precio con IVA.
-
-*/
 const calcularLineaTicket = (lineaTicket: LineaTicket): ResultadoLineaTicket => {
   const producto = lineaTicket.producto;
   const precioUnidadConIVA = calcularPrecioUnidadConIVA(producto);
@@ -133,18 +80,6 @@ const calcularLineaTicket = (lineaTicket: LineaTicket): ResultadoLineaTicket => 
     tipoIva: producto.tipoIva,
     precioConIva: precioUnidadConIVA,
   };
-};
-
-const calcularPrecioUnidadConIVA = (producto: Producto): number => {
-  const precio = producto.precio;
-  const porcentajeDeIVA = obtenerPorcentaje(producto.tipoIva);
-  return precio + (precio * porcentajeDeIVA) / 100;
-};
-
-const obtenerPorcentaje = (tipoIva: string): number => {
-  const tipoDeIVA = tiposDeIVA.filter((iva) => iva.tipoDeIVA === tipoIva);
-  const porcentaje = tipoDeIVA[0].porcentaje;
-  return porcentaje;
 };
 
 export const calculaTicket = (lineasTicket: LineaTicket[]): TicketFinal => {
@@ -165,3 +100,4 @@ export const calculaTicket = (lineasTicket: LineaTicket[]): TicketFinal => {
 };
 
 console.log(calculaTicket(productos));
+
