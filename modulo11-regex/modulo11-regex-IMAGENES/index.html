@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>EXTRACTOR DE IMÁGENES</title>
+		<link rel="stylesheet" href="./src/reset.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./src/style.scss" />
+	</head>
+	<body>
+		<main>
+			<header>
+				<form id="formulario" class="formulario">
+					<label for="cajaDeTexto" class="formulario__titulo"
+						>Pegue el HTML</label
+					>
+					<div>
+						<textarea
+							id="cajaDeTexto"
+							name=""
+							id=""
+							rows="20"
+							cols="50"
+							class="formulario__cajaTexto"
+						></textarea>
+						<button type="submit" class="formulario__boton">
+							Extraer imágenes
+						</button>
+					</div>
+				</form>
+			</header>
+			<section class="resultados">
+				<h1 class="resultados__cabecera">Resultados</h1>
+				<div id="listadoImagenes" class="resultados__imagenes"></div>
+			</section>
+		</main>
+		<script type="module" src="./src/index.ts"></script>
+	</body>
+</html>

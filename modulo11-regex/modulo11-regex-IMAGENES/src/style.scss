@@ -1,0 +1,123 @@
+$fontFamilyPrimary: 'Raleway', sans-serif;
+$textColor: #212121;
+
+body {
+	font-family: $fontFamilyPrimary;
+	color: $textColor;
+}
+
+main {
+	display: grid;
+	grid-template-rows: auto 2fr;
+	min-height: 100vh;
+}
+
+header {
+	display: grid;
+	place-items: center;
+
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+
+	background-color: hsl(0deg 0% 95%);
+}
+
+.formulario {
+	display: grid;
+	grid-template-rows: 3rem auto;
+	width: 50%;
+	max-width: 50rem;
+
+	& > div {
+		display: grid;
+		grid-template-rows: auto 4rem;
+	}
+
+	&__titulo {
+		padding-top: 1rem;
+		font-size: 1.5rem;
+	}
+
+	&__cajaTexto {
+		all: unset;
+		padding: 1.3rem;
+		border: 1px solid #708090;
+		border-radius: 4px;
+	}
+
+	&__boton {
+		all: unset;
+
+		place-self: center center;
+
+		padding: 0.6rem;
+
+		border: 1px solid #000;
+		border-radius: 3px;
+	}
+}
+
+.resultados {
+	padding-right: 2rem;
+	padding-bottom: 4rem;
+	padding-left: 2rem;
+	background-color: #708090;
+
+	&__cabecera {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	&__lista {
+		width: 50%;
+		margin: 0 auto;
+		margin-top: 3rem;
+		background-color: rgb(41 41 41);
+
+		& > ul {
+			display: grid;
+			grid-auto-rows: 2rem;
+			grid-row-gap: 1rem;
+			color: #fff;
+		}
+	}
+
+	&__imagenes {
+		display: grid;
+		grid-gap: 2rem;
+		grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+	}
+}
+
+.caja {
+	display: grid;
+	grid-template-rows: minmax(25rem, 1fr) minmax(4rem, auto);
+	place-items: center;
+
+	background-color: #000;
+	border-radius: 4px;
+
+	&__imagen {
+		max-width: 250px;
+		padding: 1rem;
+	}
+
+	&__imagenURL {
+		display: grid;
+		place-items: center;
+		
+		width: 100%;
+		height: 100%;
+
+		font-size: 1.2em;
+		word-break: break-word;
+
+		background-color: #e8e9eb;
+	}
+}
+
+

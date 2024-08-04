@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>IBAN VALIDATOR</title>
+		<link rel="stylesheet" href="./src/reset.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./src/style.scss" />
+	</head>
+	<body>
+		<main>
+			<header>
+				<form id="formulario" class="formulario">
+					<label for="buscador" class="formulario__titulo"
+						>Introduzca el IBAN</label
+					>
+					<div>
+						<input
+							class="formulario__buscador"
+							type="text"
+							id="busqueda"
+							placeholder="IBAN"
+						/>
+						<button type="submit" class="formulario__boton">
+							<svg
+								class="formulario__icono-busqueda"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 488.4 488.4"
+								xml:space="preserve"
+							>
+								<path
+									d="M0 203.25c0 112.1 91.2 203.2 203.2 203.2 51.6 0 98.8-19.4 134.7-51.2l129.5 129.5c2.4 2.4 5.5 3.6 8.7 3.6s6.3-1.2 8.7-3.6c4.8-4.8 4.8-12.5 0-17.3l-129.6-129.5c31.8-35.9 51.2-83 51.2-134.7C406.4 91.15 315.2.05 203.2.05S0 91.15 0 203.25zm381.9 0c0 98.5-80.2 178.7-178.7 178.7s-178.7-80.2-178.7-178.7 80.2-178.7 178.7-178.7 178.7 80.1 178.7 178.7z"
+								/>
+							</svg>
+						</button>
+					</div>
+				</form>
+			</header>
+			<section class="resultados">
+				<h1 class="resultados__cabecera">Resultados</h1>
+				<div id="listadoResultados" class="resultados__lista"></div>
+			</section>
+		</main>
+		<script type="module" src="./src/index.ts"></script>
+	</body>
+</html>

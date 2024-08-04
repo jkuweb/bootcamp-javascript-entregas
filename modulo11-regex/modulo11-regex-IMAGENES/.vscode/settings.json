@@ -1,0 +1,12 @@
+{
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"eslint.validate": [
+		"javascript"
+	],
+	"eslint.useFlatConfig": true,
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": true,
+	"editor.formatOnSave": true,
+	"files.autoSaveDelay": 5000
+}
