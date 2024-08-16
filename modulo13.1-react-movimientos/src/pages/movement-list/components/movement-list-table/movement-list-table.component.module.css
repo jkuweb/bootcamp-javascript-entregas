@@ -1,0 +1,37 @@
+.grid-container {
+  min-width: 100%;
+  overflow: auto;
+}
+
+.table-top-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+.table-top-header > div > span:first-child {
+	margin-right: .2rem;
+}
+
+.header-table {
+  display: grid;
+  grid-template-columns: 20% 20% 1fr 20% 20%;
+  gap: 1px;
+}
+
+.grid-table {
+  min-width: 800px;
+}
+
+.header-cell {
+	line-break: anywhere;
+  padding: 10px;
+  color: var(--table-header-color);
+  background-color: var(--table-header-background-color);
+  font-size: var(--table-header-font-size);
+  font-weight: var(--table-header-font-weight);
+}
