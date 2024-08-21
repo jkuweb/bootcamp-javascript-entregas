@@ -108,5 +108,17 @@
       "accountId": "3"
     }
   ],
-  "transfer": []
+  "transfer": [
+    {
+      "accounId": "2",
+      "iban": "ES7921000813610123456789",
+      "name": "Andres",
+      "amount": "1200",
+      "concept": "alquiler",
+      "notes": "alquiler del mes",
+      "transferDate": "2024-08-19T09:38:50.792Z",
+      "realTransferDate": "",
+      "id": 1
+    }
+  ]
 }
