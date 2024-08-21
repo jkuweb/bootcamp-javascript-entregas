@@ -1,0 +1,27 @@
+.row {
+  display: grid;
+  grid-template-columns: 20% 20% 1fr 20% 20%;
+}
+.row:nth-child(odd) {
+  background-color: #eee;
+}
+.data-cell {
+	font-size: 16px;
+  padding: 15px;
+  color: var(--secondary-color);
+  align-self: center;
+	line-break: anywhere;
+}
+.data-cell a {
+  text-decoration: underline;
+  color: var(--secondary-color);
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+	text-align: left;
+}
+.red {
+	color: red
+}
